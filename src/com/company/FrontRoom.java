@@ -12,10 +12,11 @@ public class FrontRoom extends Room {
      */
     public FrontRoom()
     {
-        roomNumber = 3;
-        contents.add("spiders");
-        direction.put('e',2);
-        direction.put('n',5);
+        roomNumber = 2;
+        contents.add("dead scorpion");
+        direction.put('s',1);
+        direction.put('w',3);
+        direction.put('e',4);
 
     }
     @Override
@@ -40,4 +41,5 @@ public class FrontRoom extends Room {
                              " or press Q to quit}";
         return exitMessage;
     }
+
 }

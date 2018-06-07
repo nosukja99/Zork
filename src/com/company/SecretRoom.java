@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SecretRoom {
+public class SecretRoom extends Room {
     HashMap<Character, Integer> direction = new HashMap<>();
     ArrayList<String> contents = new ArrayList<>();
     int roomNum;
@@ -38,5 +38,4 @@ public class SecretRoom {
         String exitMessage = "{You can (1)exit to the west or press Q to quit}";
         return exitMessage;
     }
-}
 }
