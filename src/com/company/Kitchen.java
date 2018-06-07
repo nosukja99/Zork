@@ -32,7 +32,7 @@ public class Kitchen extends Room {
 
     @Override
     public String displayContent() {
-        String display = "You are standing in the library of an old house.\nYou see "+ contents.get(0);
+        String display = "You are standing in the kitchen.\nYou see "+ contents.get(0);
         return display;
     }
     @Override

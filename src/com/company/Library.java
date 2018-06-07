@@ -35,7 +35,7 @@ public class Library extends Room {
     @Override
     public String displayContent() {
 
-        String display = "You are standing in a library.\nYou see "+ contents;
+        String display = "You are standing in a library.\nYou see "+ contents.get(0);
         return display;
     }
 

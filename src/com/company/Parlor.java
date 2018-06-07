@@ -17,8 +17,9 @@ public class Parlor extends Room{
     public Parlor()
     {
         roomNum = 7;
-        contents.add("bats");
+        contents.add("treasure chest");
         direction.put('w', 6);
+        direction.put('s', 4);
 
     }
     @Override
@@ -33,7 +34,7 @@ public class Parlor extends Room{
 
     @Override
     public String displayContent() {
-        String display = "You are standing in the foyer of an old house.\nYou see "+contents.get(0);;
+        String display = "You are standing in the parlor.\nYou see "+contents.get(0);;
         return display;
     }
     @Override

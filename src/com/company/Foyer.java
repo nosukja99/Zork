@@ -45,7 +45,8 @@ public class Foyer extends Room {
         switch(s)
         {
             case "1": direction='n'; break;
-            case "2": direction='s'; break;
+            case "q": direction='q'; break;
+            case "Q": direction='q'; break;
         }
         return direction;
     }

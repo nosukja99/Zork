@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         User user = new User();
         String choice;
+        int countNum=1;
         Foyer foyer= new Foyer();
         System.out.println(foyer.displayContent());
         System.out.println(foyer.displayExitMessage());
@@ -21,9 +22,11 @@ public class Main {
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
+                    countNum++;
                     newRoom = user.move(newRoom, newRoom.changeStringToChar(choice1));
                     System.out.println(newRoom.displayContent());
                     System.out.println(newRoom.displayExitMessage());
+                    System.out.println("You visited "+countNum+" rooms.");
                     choice1 = scanner.next();
                     //System.out.println("Room number: "+newRoom.getRoomNumber());
                 }

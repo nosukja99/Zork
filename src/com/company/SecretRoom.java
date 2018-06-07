@@ -30,7 +30,7 @@ public class SecretRoom extends Room {
 
     @Override
     public String displayContent() {
-        return "You are standing in the foyer of an old house.\nYou see "+contents.get(0);
+        return "You are standing in the secret room.\nYou see "+ contents.get (0);
     }
 
     @Override
