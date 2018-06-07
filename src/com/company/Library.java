@@ -39,4 +39,10 @@ public class Library extends Room {
         return display;
     }
 
+    @Override
+    public String displayExitMessage() {
+        String exitMessage = "{You can (1)exit to the east, (2) exit to the north, or press Q to quit}";
+        return exitMessage;
+    }
+
 }

@@ -32,6 +32,12 @@ public class FrontRoom extends Room {
     public String displayContent() {
         String display = "You are standing in a front room.\nYou see "+contents.get(0);
         return display;
+    }
 
+    @Override
+    public String displayExitMessage() {
+        String exitMessage = "{You can (1)exit to the south, (2) exit to the west, (3) exit to the east," +
+                             " or press Q to quit}";
+        return exitMessage;
     }
 }
