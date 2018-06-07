@@ -34,7 +34,7 @@ public class Kitchen extends Room {
     public String displayContent() {
         Random rand = new Random();
         int x = rand.nextInt(contents.size());
-        String display = "You see "+contents.get(x);
+        String display = "You are standing in the kitchen.\nYou see "+contents.get(x);
         return display;
     }
 }
