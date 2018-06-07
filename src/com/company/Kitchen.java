@@ -42,9 +42,5 @@ public class Kitchen extends Room {
         String exitMessage = "{You can (1)exit to the west, (2) exit to the north or press Q to quit}";
         return exitMessage;
     }
-    @Override
-    public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the west, (2) exit to the north, or press Q to quit}";
-        return exitMessage;
-    }
+
 }
