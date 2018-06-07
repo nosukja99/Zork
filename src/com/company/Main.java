@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -23,12 +24,17 @@ public class Main {
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
                     countNum++;
-                    newRoom = user.move(newRoom, newRoom.changeStringToChar(choice1));
+                    char newDirection = newRoom.changeStringToChar(choice1);
+                    if (newDirection==0) {
+                        System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
+                        break;
+                    }
+                    newRoom = user.move(newRoom, newDirection);
                     System.out.println(newRoom.displayContent());
                     System.out.println(newRoom.displayExitMessage());
                     System.out.println("You visited "+countNum+" rooms.");
                     choice1 = scanner.next();
-                    //System.out.println("Room number: "+newRoom.getRoomNumber());
+
                 }
             } else {
                 System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
