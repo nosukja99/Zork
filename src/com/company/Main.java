@@ -25,7 +25,7 @@ public class Main {
                 while (newRoom.changeStringToChar(choice1) != 'q') {
                     countNum++;
                     char newDirection = newRoom.changeStringToChar(choice1);
-                    if (newDirection==0) {
+                    if (newDirection=='0') {
                         System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
                         break;
                     }
