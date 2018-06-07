@@ -13,7 +13,7 @@ public class FrontRoom extends Room {
     public FrontRoom()
     {
         roomNumber = 2;
-        contents.add("dead scorpion");
+        contents.add("a piano");
         direction.put('s',1);
         direction.put('w',3);
         direction.put('e',4);
@@ -37,9 +37,22 @@ public class FrontRoom extends Room {
 
     @Override
     public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the south, (2) exit to the west, (3) exit to the east," +
-                             " or press Q to quit}";
+        String exitMessage = "{You can (1)exit to the south, (2) exit to the west,(3) exit to the east or press Q to quit}";
         return exitMessage;
+    }
+
+    @Override
+    public Character changeStringToChar(String s) {
+        char direction = 0;
+        switch(s)
+        {
+            case "1": direction='s'; break;
+            case "2": direction='w'; break;
+            case "3": direction='e'; break;
+            case "Q": direction='q'; break;
+            case "q": direction='q'; break;
+        }
+        return direction;
     }
 
 }
