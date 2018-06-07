@@ -38,4 +38,16 @@ public class SecretRoom extends Room {
         String exitMessage = "{You can (1)exit to the west or press Q to quit}";
         return exitMessage;
     }
+
+    @Override
+    public Character changeStringToChar(String s) {
+        char direction = 0;
+        switch(s)
+        {
+            case "1": direction='w'; break;
+            case "Q": direction='q'; break;
+            case "q": direction='q'; break;
+        }
+        return direction;
+    }
 }

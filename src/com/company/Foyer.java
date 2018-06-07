@@ -35,7 +35,19 @@ public class Foyer extends Room {
     }
     @Override
     public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the north, (2) exit to the south, or press Q to quit}";
+        String exitMessage = "{You can (1)exit to the north or press Q to quit}";
         return exitMessage;
     }
+
+    @Override
+    public Character changeStringToChar(String s) {
+        char direction = 0;
+        switch(s)
+        {
+            case "1": direction='n'; break;
+            case "2": direction='s'; break;
+        }
+        return direction;
+    }
+
 }

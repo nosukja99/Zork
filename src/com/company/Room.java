@@ -11,4 +11,5 @@ abstract class Room {
     // instance methods:
     public abstract String displayContent ();
     public abstract String displayExitMessage();
+    public abstract Character changeStringToChar(String s);
 }

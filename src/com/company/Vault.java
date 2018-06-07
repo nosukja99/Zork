@@ -17,7 +17,7 @@ import java.util.HashMap;
             roomNum = 6;
             contents.add("3 walking skeletons");
             direction.put('e', 7);
-            direction.put('e', 8);
+            direction.put('c', 8);
         }
 
         @Override
@@ -32,7 +32,7 @@ import java.util.HashMap;
 
         @Override
         public String displayContent() {
-            return "You are standing in the foyer of an old house.\nYou see "+contents.get(0);;
+            return "You see "+ contents.get(0);
         }
 
         @Override
@@ -40,6 +40,19 @@ import java.util.HashMap;
             String exitMessage = "{You can (1)exit to the east or press Q to quit}";
             if (Math.random()<CHANCE_OF_FINDING_SECRET_ROOM) exitMessage = "{You can (1)exit to the east, (2) exit to the east (secret room) or press Q to quit}";
             return exitMessage;
+        }
+
+        @Override
+        public Character changeStringToChar(String s) {
+            char direction = 0;
+            switch(s)
+            {
+                case "1": direction='e'; break;
+                case "2": direction='c'; break;
+                case "Q": direction='q'; break;
+                case "q": direction='q'; break;
+            }
+            return direction;
         }
     }
 
