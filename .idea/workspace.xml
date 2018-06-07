@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e8014e2-4c4b-42d9-836f-e8cf2f75a0ed" name="Default" comment="add with kim's rooms">
+    <list default="true" id="9e8014e2-4c4b-42d9-836f-e8cf2f75a0ed" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/User.java" afterPath="$PROJECT_DIR$/src/com/company/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -325,7 +324,7 @@
       <option name="presentableId" value="Default" />
       <updated>1528378896269</updated>
       <workItem from="1528378900416" duration="4875000" />
-      <workItem from="1528384143581" duration="1523000" />
+      <workItem from="1528384143581" duration="1562000" />
     </task>
     <task id="LOCAL-00001" summary="add abstract method">
       <created>1528381405071</created>
@@ -334,11 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528381405071</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="completed User class">
+      <created>1528385709980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528385709980</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6398000" />
+    <option name="totallyTimeSpent" value="6437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -410,7 +416,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add abstract method" />
     <MESSAGE value="add with kim's rooms" />
-    <option name="LAST_COMMIT_MESSAGE" value="add with kim's rooms" />
+    <MESSAGE value="completed User class" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed User class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
