@@ -14,16 +14,22 @@ public class Main {
         choice = scanner.next();
         if(foyer.changeStringToChar(choice) != 'q') {
             String choice1;
-            Room newRoom = user.move(foyer, foyer.changeStringToChar(choice));
-            System.out.println(newRoom.displayContent());
-            System.out.println(newRoom.displayExitMessage());
-            choice1 = scanner.next();
-            while(newRoom.changeStringToChar(choice1) !='q') {
-                Room newRoom2 = user.move(newRoom, newRoom.changeStringToChar(choice1));
-                System.out.println(newRoom2.displayContent());
-                System.out.println(newRoom2.displayExitMessage());
+            char direction = foyer.changeStringToChar(choice);
+            if (direction != 0) {
+                Room newRoom = user.move(foyer, direction);
+                System.out.println(newRoom.displayContent());
+                System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
-                //System.out.println("Room number: "+newRoom.getRoomNumber());
+                while (newRoom.changeStringToChar(choice1) != 'q') {
+                    newRoom = user.move(newRoom, newRoom.changeStringToChar(choice1));
+                    System.out.println(newRoom.displayContent());
+                    System.out.println(newRoom.displayExitMessage());
+                    choice1 = scanner.next();
+                    //System.out.println("Room number: "+newRoom.getRoomNumber());
+                }
+            } else {
+                System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
+                System.exit(-1);
             }
         }
     }

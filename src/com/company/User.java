@@ -16,9 +16,10 @@ class User {
          roomLookUp.put(2, new FrontRoom ());
          roomLookUp.put(3, new Library ());
          roomLookUp.put(4, new Kitchen ());
-         roomLookUp.put(5, new Vault ());
-         roomLookUp.put(6, new Parlor ());
-         roomLookUp.put(7, new SecretRoom ());
+         roomLookUp.put(5, new DiningRoom ());
+         roomLookUp.put(6, new Vault ());
+         roomLookUp.put(7, new Parlor ());
+         roomLookUp.put(8, new SecretRoom());
      }
     // instance variables:
 

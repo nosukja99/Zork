@@ -35,7 +35,7 @@ public class DiningRoom extends Room{
     public String displayContent() {
         Random rand = new Random();
         int x = rand.nextInt(contents.size());
-        String display = "You are standing in the dining room.\nYou see "+contents.get(x);
+        String display = "You are standing in the dinning room\n You see "+contents.get(x);
         return display;
     }
     @Override

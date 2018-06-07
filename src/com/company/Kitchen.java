@@ -32,9 +32,7 @@ public class Kitchen extends Room {
 
     @Override
     public String displayContent() {
-        Random rand = new Random();
-        int x = rand.nextInt(contents.size());
-        String display = "You are standing in the kitchen.\nYou see "+contents.get(x);
+        String display = "You are standing in the library of an old house.\nYou see "+ contents.get(0);
         return display;
     }
     @Override
