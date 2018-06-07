@@ -16,7 +16,7 @@ public class DiningRoom extends Room{
     {
         roomNum = 5;
         contents.add("dust");
-        contents.add("a empty box");
+        contents.add("an empty box");
         direction.put('s', 3);
     }
 
@@ -46,7 +46,7 @@ public class DiningRoom extends Room{
 
     @Override
     public Character changeStringToChar(String s) {
-        char direction = 0;
+        char direction = '0';
         switch(s)
         {
             case "1": direction='s'; break;

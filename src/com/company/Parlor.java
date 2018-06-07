@@ -39,13 +39,13 @@ public class Parlor extends Room{
     }
     @Override
     public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the west, (2) exit to the south or press Q to quit}";
+        String exitMessage = "{You can (1)exit to the west,(2) exit to the south or press Q to quit}";
         return exitMessage;
     }
 
     @Override
     public Character changeStringToChar(String s) {
-        char direction = 0;
+        char direction = '0';
         switch(s)
         {
             case "1": direction='w'; break;

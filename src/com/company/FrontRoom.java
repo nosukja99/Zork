@@ -43,7 +43,7 @@ public class FrontRoom extends Room {
 
     @Override
     public Character changeStringToChar(String s) {
-        char direction = 0;
+        char direction = '0';
         switch(s)
         {
             case "1": direction='s'; break;
