@@ -15,7 +15,7 @@ public class DiningRoom extends Room{
     public DiningRoom()
     {
         roomNum = 5;
-        contents.add("bats");
+        contents.add("dust");
         contents.add("a empty box");
         direction.put('s', 3);
     }
@@ -49,7 +49,7 @@ public class DiningRoom extends Room{
         char direction = 0;
         switch(s)
         {
-            case "1": direction='w'; break;
+            case "1": direction='s'; break;
             case "Q": direction='q'; break;
             case "q": direction='q'; break;
         }
