@@ -33,9 +33,7 @@ public class Parlor extends Room{
 
     @Override
     public String displayContent() {
-        Random rand = new Random();
-        int x = rand.nextInt(contents.size());
-        String display = "You see "+contents.get(x);
+        String display = "You are standing in the foyer of an old house.\nYou see "+contents.get(0);;
         return display;
     }
     @Override

@@ -32,7 +32,7 @@ import java.util.HashMap;
 
         @Override
         public String displayContent() {
-            return "You see "+ contents.get (0);
+            return "You are standing in the foyer of an old house.\nYou see "+contents.get(0);;
         }
 
         @Override

@@ -32,9 +32,8 @@ public class Kitchen extends Room {
 
     @Override
     public String displayContent() {
-        Random rand = new Random();
         int x = rand.nextInt(contents.size());
-        String display = "You see "+contents.get(x);
+        String display = "You are standing in the library of an old house.\nYou see "+ contents.get(0);
         return display;
     }
     @Override
@@ -42,9 +41,5 @@ public class Kitchen extends Room {
         String exitMessage = "{You can (1)exit to the west, (2) exit to the north or press Q to quit}";
         return exitMessage;
     }
-    @Override
-    public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the west, (2) exit to the north, or press Q to quit}";
-        return exitMessage;
-    }
+
 }
