@@ -3,6 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	Kitchen kitchen = new Kitchen();
+	System.out.println(kitchen.getRoomNumber());
+
+
     }
 }

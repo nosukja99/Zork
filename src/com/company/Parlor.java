@@ -2,9 +2,11 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import java.util.HashMap;
 import java.util.Random;
 
-public class Kitchen extends Room {
+public class Parlor extends Room{
     HashMap<Character, Integer> direction = new HashMap<>();
     ArrayList<String> contents = new ArrayList<>();
 
@@ -12,21 +14,20 @@ public class Kitchen extends Room {
     /**
      * constructor with no parameter
      */
-    public Kitchen()
+    public Parlor()
     {
-        roomNum = 4;
+        roomNum = 7;
         contents.add("bats");
-        direction.put('w', 2);
-        direction.put('n', 7);
-    }
+        direction.put('w', 6);
 
+    }
     @Override
     public int getRoomNumber() {
         return roomNum;
     }
 
-    public HashMap getExit()
-    {
+    @Override
+    public HashMap getExit() {
         return direction;
     }
 

@@ -2,17 +2,40 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class DiningRoom extends Room{
+    HashMap<Character, Integer> direction = new HashMap<>();
+    ArrayList<String> contents = new ArrayList<>();
+    int roomNum;
 
+    /**
+     * constructor with no parameter
+     */
+    public DiningRoom()
+    {
+        roomNum = 5;
+        contents.add("bats");
+        contents.add("a empty box");
+        direction.put('s', 3);
+    }
 
     @Override
-    public HashMap getDirection() {
-        return null;
+    public int getRoomNumber() {
+        return roomNum;
+    }
+
+    @Override
+    public HashMap getExit()
+    {
+        return direction;
     }
 
     @Override
     public String displayContent() {
-        return null;
+        Random rand = new Random();
+        int x = rand.nextInt(contents.size());
+        String display = "You see "+contents.get(x);
+        return display;
     }
 }
