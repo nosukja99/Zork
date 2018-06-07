@@ -16,7 +16,7 @@ public class Main {
         if(foyer.changeStringToChar(choice) != 'q') {
             String choice1;
             char direction = foyer.changeStringToChar(choice);
-            if (direction != 0) {
+            if (direction != '0') {
                 Room newRoom = user.move(foyer, direction);
                 System.out.println(newRoom.displayContent());
                 System.out.println(newRoom.displayExitMessage());
