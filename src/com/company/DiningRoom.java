@@ -38,4 +38,9 @@ public class DiningRoom extends Room{
         String display = "You see "+contents.get(x);
         return display;
     }
+    @Override
+    public String displayExitMessage() {
+        String exitMessage = "{You can (1)exit to the south, or press Q to quit}";
+        return exitMessage;
+    }
 }
