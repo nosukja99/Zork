@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +13,7 @@ public class Main {
         System.out.println(foyer.displayExitMessage());
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next();
+        if (choice.equalsIgnoreCase("q")) System.out.println(user.exit());
         if(foyer.changeStringToChar(choice) != 'q') {
             String choice1;
             char direction = foyer.changeStringToChar(choice);
@@ -36,10 +36,16 @@ public class Main {
                     choice1 = scanner.next();
 
                 }
-            } else {
+            }
+            else if (foyer.changeStringToChar(choice) == 'q'){
+                System.out.println(user.exit());
+            }
+            else {
                 System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
                 System.exit(-1);
             }
+
+            System.out.println(user.exit());
         }
     }
 }
