@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Random;
@@ -11,7 +10,6 @@ public class Main {
         User user = new User();
         String choice;
         HashSet<Integer> roomsVisited = new HashSet<>();
-        int countNum=1;
         Foyer foyer= new Foyer();
         roomsVisited.add(foyer.getRoomNumber());
         System.out.println(foyer.displayContent(user));
@@ -44,7 +42,6 @@ public class Main {
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
-                    countNum++;
                     char newDirection = newRoom.changeStringToChar(choice1);
                     if (newDirection=='0') {
                         System.out.println("That is not one of the valid options.\nPlease enter a valid option next time.");
@@ -59,7 +56,6 @@ public class Main {
                     }
                     keyValue = robUser(user, random, keyValue);
                     System.out.println(newRoom.displayExitMessage());
-                    System.out.println("You visited "+countNum+" rooms.");
                     choice1 = scanner.next();
 
                 }
