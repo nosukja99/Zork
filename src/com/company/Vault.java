@@ -2,12 +2,14 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
     public class Vault extends Room {
         public static final double CHANCE_OF_FINDING_SECRET_ROOM = 0.25;
         HashMap<Character, Integer> direction = new HashMap<>();
         ArrayList<String> contents = new ArrayList<>();
         int roomNum;
+        double money;
 
         /**
          * constructor with no parameter
@@ -31,8 +33,9 @@ import java.util.HashMap;
         }
 
         @Override
-        public String displayContent() {
-            return "You are standing in the Vault. "+"You see "+ contents.get(0);
+        public String displayContent(User user) {
+            return "You are standing in the Vault. "+"You see "+ contents.get(0) +
+                    "\n You have " + String.format("$%.2f", user.getPersonalMoney());
         }
 
         @Override
@@ -53,6 +56,20 @@ import java.util.HashMap;
                 case "q": direction='q'; break;
             }
             return direction;
+        }
+
+        @Override
+        public void setRandomAmountOfMoney (){
+            Random rn = new Random();
+            this.money = Double.valueOf(rn.nextInt(100000)/10);
+        }
+        @Override
+        public double getAmountOfMoney (){
+            return this.money;
+        }
+        @Override
+        public void setMoney (double money) {
+            this.money = money;
         }
     }
 

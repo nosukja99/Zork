@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -11,6 +12,7 @@ public class Parlor extends Room{
     ArrayList<String> contents = new ArrayList<>();
 
     int roomNum;
+    double money;
     /**
      * constructor with no parameter
      */
@@ -33,8 +35,9 @@ public class Parlor extends Room{
     }
 
     @Override
-    public String displayContent() {
-        String display = "You are standing in the parlor.\nYou see "+contents.get(0);;
+    public String displayContent(User user) {
+        String display = "You are standing in the parlor.\nYou see "+contents.get(0) +
+                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
         return display;
     }
     @Override
@@ -54,5 +57,19 @@ public class Parlor extends Room{
             case "q": direction='q'; break;
         }
         return direction;
+    }
+
+    @Override
+    public void setRandomAmountOfMoney (){
+        Random rn = new Random();
+        this.money = Double.valueOf(rn.nextInt(100000)/10);
+    }
+    @Override
+    public double getAmountOfMoney (){
+        return this.money;
+    }
+    @Override
+    public void setMoney (double money) {
+        this.money = money;
     }
 }

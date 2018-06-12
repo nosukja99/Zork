@@ -9,7 +9,10 @@ abstract class Room {
     // instance variables:
     public abstract HashMap getExit();
     // instance methods:
-    public abstract String displayContent ();
+    public abstract String displayContent (User user);
     public abstract String displayExitMessage();
     public abstract Character changeStringToChar(String s);
+    public abstract void setRandomAmountOfMoney();
+    public abstract double getAmountOfMoney ();
+    public abstract void setMoney (double money);
 }

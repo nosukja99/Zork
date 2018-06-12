@@ -9,7 +9,7 @@ public class Main {
         String choice;
         int countNum=1;
         Foyer foyer= new Foyer();
-        System.out.println(foyer.displayContent());
+        System.out.println(foyer.displayContent(user));
         System.out.println(foyer.displayExitMessage());
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next();
@@ -19,7 +19,7 @@ public class Main {
             char direction = foyer.changeStringToChar(choice);
             if (direction != '0') {
                 Room newRoom = user.move(foyer, direction);
-                System.out.println(newRoom.displayContent());
+                System.out.println(newRoom.displayContent(user));
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
@@ -30,7 +30,7 @@ public class Main {
                         break;
                     }
                     newRoom = user.move(newRoom, newDirection);
-                    System.out.println(newRoom.displayContent());
+                    System.out.println(newRoom.displayContent(user));
                     System.out.println(newRoom.displayExitMessage());
                     System.out.println("You visited "+countNum+" rooms.");
                     choice1 = scanner.next();

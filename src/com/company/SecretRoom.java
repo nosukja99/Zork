@@ -2,11 +2,13 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class SecretRoom extends Room {
     HashMap<Character, Integer> direction = new HashMap<>();
     ArrayList<String> contents = new ArrayList<>();
     int roomNum;
+    double money;
 
     /**
      * constructor with no parameter
@@ -29,8 +31,10 @@ public class SecretRoom extends Room {
     }
 
     @Override
-    public String displayContent() {
-        return "You are standing in the secret room.\nYou see "+ contents.get (0);
+    public String displayContent(User user) {
+
+        return "You are standing in the secret room.\nYou see "+ contents.get (0) +
+                "\n You have " +String.format("$%.2f", user.getPersonalMoney());
     }
 
     @Override
@@ -49,5 +53,19 @@ public class SecretRoom extends Room {
             case "q": direction='q'; break;
         }
         return direction;
+    }
+
+    @Override
+    public void setRandomAmountOfMoney (){
+        Random rn = new Random();
+        this.money = Double.valueOf(rn.nextInt(100000)/10);
+    }
+    @Override
+    public double getAmountOfMoney (){
+        return this.money;
+    }
+    @Override
+    public void setMoney (double money) {
+        this.money = money;
     }
 }

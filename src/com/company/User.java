@@ -9,6 +9,16 @@ class User {
     final char [] directions = {'n','s','e','w'};
 
     HashMap<Integer, Room> roomLookUp = new HashMap<>();
+    double personalMoney;
+
+    // accessor and mutator for personal money
+    public double getPersonalMoney() {
+        return personalMoney;
+    }
+
+    public void setPersonalMoney(double personalMoney) {
+        this.personalMoney = personalMoney;
+    }
 
     // constructors:
      public User()
