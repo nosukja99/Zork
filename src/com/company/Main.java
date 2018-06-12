@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
@@ -15,6 +16,17 @@ public class Main {
         String moneyChoice = in.next();
         if (moneyChoice.equalsIgnoreCase("y")){
             foyer.takeMoney(user);
+        }
+        Random rnd = new Random();
+        int random = rnd.nextInt(8);
+        int keyValue = 0;
+        if (random == keyValue){
+            GameCharacter c = new GameCharacter();
+            System.out.println(c.takeMoneyFromUser(user));
+            keyValue++;
+        }
+        else {
+            keyValue++;
         }
         System.out.println(foyer.displayExitMessage());
         Scanner scanner = new Scanner(System.in);
@@ -31,6 +43,14 @@ public class Main {
                 if (moneyChoice.equalsIgnoreCase("y")){
                     newRoom.takeMoney(user);
                 }
+                if (random == keyValue){
+                    GameCharacter c = new GameCharacter();
+                    System.out.println(c.takeMoneyFromUser(user));
+                    keyValue++;
+                }
+                else {
+                    keyValue++;
+                }
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
@@ -46,6 +66,13 @@ public class Main {
                     moneyChoice = in.next();
                     if (moneyChoice.equalsIgnoreCase("y")){
                         newRoom.takeMoney(user);
+                    }
+                    if (random == keyValue){
+                        GameCharacter c = new GameCharacter();
+                        System.out.println(c.takeMoneyFromUser(user));
+                    }
+                    else {
+                        keyValue++;
                     }
                     System.out.println(newRoom.displayExitMessage());
                     System.out.println("You visited "+countNum+" rooms.");

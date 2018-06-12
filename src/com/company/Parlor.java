@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import java.util.HashMap;
-import java.util.Random;
-
 public class Parlor extends Room{
     HashMap<Character, Integer> direction = new HashMap<>();
     ArrayList<String> contents = new ArrayList<>();
@@ -48,7 +45,7 @@ public class Parlor extends Room{
     }
 
     @Override
-    public Character changeStringToChar(String s) {
+    public char changeStringToChar(String s) {
         char direction = '0';
         switch(s)
         {

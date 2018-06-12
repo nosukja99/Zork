@@ -13,7 +13,7 @@ abstract class Room {
     public abstract HashMap getExit();
     public abstract String displayContent (User user);
     public abstract String displayExitMessage();
-    public abstract Character changeStringToChar(String s);
+    public abstract char changeStringToChar(String s);
     public abstract void setRandomAmountOfMoney();
     public abstract double getAmountOfMoney ();
     public abstract void setMoney (double money);

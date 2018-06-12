@@ -44,7 +44,7 @@ public class Foyer extends Room {
     }
 
     @Override
-    public Character changeStringToChar(String s) {
+    public char changeStringToChar(String s) {
         char direction = '0';
         switch(s)
         {
