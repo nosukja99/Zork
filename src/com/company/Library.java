@@ -18,7 +18,7 @@ public class Library extends Room {
         contents.add("spiders");
         direction.put('e',2);
         direction.put('n',5);
-
+        setRandomAmountOfMoney();
     }
 
 
@@ -38,7 +38,8 @@ public class Library extends Room {
     public String displayContent(User user) {
 
         String display = "You are standing in a library.\nYou see "+ contents.get(0) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
     }
 
@@ -73,5 +74,10 @@ public class Library extends Room {
     @Override
     public void setMoney (double money) {
         this.money = money;
+    }
+    @Override
+    public void takeMoney (User user) {
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+        setMoney(0);
     }
 }

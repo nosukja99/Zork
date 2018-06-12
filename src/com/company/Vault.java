@@ -20,6 +20,7 @@ import java.util.Random;
             contents.add("3 walking skeletons");
             direction.put('e', 7);
             direction.put('c', 8);
+            setRandomAmountOfMoney();
         }
 
         @Override
@@ -34,8 +35,9 @@ import java.util.Random;
 
         @Override
         public String displayContent(User user) {
-            return "You are standing in the Vault. "+"You see "+ contents.get(0) +
-                    "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+            return "You are standing in the Vault.\n"+"You see "+ contents.get(0) +
+                    "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
+                    String.format("$%.2f",getAmountOfMoney());
         }
 
         @Override
@@ -70,6 +72,11 @@ import java.util.Random;
         @Override
         public void setMoney (double money) {
             this.money = money;
+        }
+        @Override
+        public void takeMoney (User user) {
+            user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+            setMoney(0);
         }
     }
 

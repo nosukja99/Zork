@@ -17,7 +17,7 @@ public class Foyer extends Room {
         roomNumber = 1;
         contents.add("dead scorpion");
         direction.put('n',2);
-
+        setRandomAmountOfMoney();
     }
     @Override
     public int getRoomNumber() {
@@ -32,7 +32,8 @@ public class Foyer extends Room {
     @Override
     public String displayContent(User user) {
         String display = "You are standing in the foyer of an old house.\nYou see "+contents.get(0) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
 
     }
@@ -68,5 +69,9 @@ public class Foyer extends Room {
     public void setMoney (double money) {
         this.money = money;
     }
-
+    @Override
+    public void takeMoney (User user) {
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+        setMoney(0);
+    }
 }

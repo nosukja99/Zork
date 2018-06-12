@@ -19,6 +19,7 @@ public class FrontRoom extends Room {
         direction.put('s',1);
         direction.put('w',3);
         direction.put('e',4);
+        setRandomAmountOfMoney();
 
     }
     @Override
@@ -34,7 +35,8 @@ public class FrontRoom extends Room {
     @Override
     public String displayContent(User user) {
         String display = "You are standing in a front room.\nYou see "+contents.get(0) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
     }
 
@@ -70,5 +72,10 @@ public class FrontRoom extends Room {
     @Override
     public void setMoney (double money) {
         this.money = money;
+    }
+    @Override
+    public void takeMoney (User user) {
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+        setMoney(0);
     }
 }

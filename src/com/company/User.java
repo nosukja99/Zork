@@ -7,7 +7,6 @@ class User {
     // constants:
     final double CHANCE_OF_BEING_FOLLOWED_BY_GHOST = 0.25;
     final char [] directions = {'n','s','e','w'};
-
     HashMap<Integer, Room> roomLookUp = new HashMap<>();
     double personalMoney;
 
@@ -32,7 +31,6 @@ class User {
          roomLookUp.put(7, new Parlor ());
          roomLookUp.put(8, new SecretRoom());
      }
-    // instance variables:
 
     // instance methods:
     public Room move ( Room currentRoom, char direction){
@@ -49,4 +47,6 @@ class User {
              return "You have exited the house";
              }
      }
+
+
 }

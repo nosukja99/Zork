@@ -22,7 +22,7 @@ public class Parlor extends Room{
         contents.add("treasure chest");
         direction.put('w', 6);
         direction.put('s', 4);
-
+        setRandomAmountOfMoney();
     }
     @Override
     public int getRoomNumber() {
@@ -37,7 +37,8 @@ public class Parlor extends Room{
     @Override
     public String displayContent(User user) {
         String display = "You are standing in the parlor.\nYou see "+contents.get(0) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
     }
     @Override
@@ -71,5 +72,10 @@ public class Parlor extends Room{
     @Override
     public void setMoney (double money) {
         this.money = money;
+    }
+    @Override
+    public void takeMoney (User user) {
+        setMoney(0);
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
     }
 }

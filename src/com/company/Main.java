@@ -10,6 +10,12 @@ public class Main {
         int countNum=1;
         Foyer foyer= new Foyer();
         System.out.println(foyer.displayContent(user));
+        System.out.println("Do you want to take the money in the room? (y/n)");
+        Scanner in = new Scanner (System.in);
+        String moneyChoice = in.next();
+        if (moneyChoice.equalsIgnoreCase("y")){
+            foyer.takeMoney(user);
+        }
         System.out.println(foyer.displayExitMessage());
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next();
@@ -20,6 +26,11 @@ public class Main {
             if (direction != '0') {
                 Room newRoom = user.move(foyer, direction);
                 System.out.println(newRoom.displayContent(user));
+                System.out.println("Do you want to take the money in the room? (y/n)");
+                moneyChoice = in.next();
+                if (moneyChoice.equalsIgnoreCase("y")){
+                    newRoom.takeMoney(user);
+                }
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
@@ -31,6 +42,11 @@ public class Main {
                     }
                     newRoom = user.move(newRoom, newDirection);
                     System.out.println(newRoom.displayContent(user));
+                    System.out.println("Do you want to take the money in the room? (y/n)");
+                    moneyChoice = in.next();
+                    if (moneyChoice.equalsIgnoreCase("y")){
+                        newRoom.takeMoney(user);
+                    }
                     System.out.println(newRoom.displayExitMessage());
                     System.out.println("You visited "+countNum+" rooms.");
                     choice1 = scanner.next();

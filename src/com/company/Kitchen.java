@@ -19,6 +19,7 @@ public class Kitchen extends Room {
         contents.add("bats");
         direction.put('w', 2);
         direction.put('n', 7);
+        setRandomAmountOfMoney();
     }
 
     @Override
@@ -34,7 +35,8 @@ public class Kitchen extends Room {
     @Override
     public String displayContent(User user) {
         String display = "You are standing in the kitchen.\nYou see "+ contents.get(0) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
     }
     @Override
@@ -68,5 +70,10 @@ public class Kitchen extends Room {
     @Override
     public void setMoney (double money) {
         this.money = money;
+    }
+    @Override
+    public void takeMoney (User user) {
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+        setMoney(0);
     }
 }

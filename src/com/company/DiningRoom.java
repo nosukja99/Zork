@@ -18,6 +18,7 @@ public class DiningRoom extends Room{
         contents.add("dust");
         contents.add("an empty box");
         direction.put('s', 3);
+        setRandomAmountOfMoney();
     }
 
     @Override
@@ -36,7 +37,8 @@ public class DiningRoom extends Room{
         Random rand = new Random();
         int x = rand.nextInt(contents.size());
         String display = "You are standing in the dinning room\n You see "+contents.get(x) +
-                "\n You have " + String.format("$%.2f", user.getPersonalMoney());
+                "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                String.format("$%.2f",getAmountOfMoney());
         return display;
     }
     @Override
@@ -69,5 +71,10 @@ public class DiningRoom extends Room{
     @Override
     public void setMoney (double money) {
         this.money = money;
+    }
+    @Override
+    public void takeMoney (User user) {
+        user.setPersonalMoney(user.getPersonalMoney()+ getAmountOfMoney());
+        setMoney(0);
     }
 }
