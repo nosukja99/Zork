@@ -5,7 +5,11 @@ import java.util.HashMap;
 import java.util.Random;
 
     public class Vault extends Room {
+        //constants
         public static final double CHANCE_OF_FINDING_SECRET_ROOM = 0.25;
+        public static final String ROOMNAME = "Vault";
+        public static final String ROOMCONTENTS = "3 walking skeletons";
+
         HashMap<Character, Integer> direction = new HashMap<>();
         ArrayList<String> contents = new ArrayList<>();
         int roomNum;
@@ -21,6 +25,16 @@ import java.util.Random;
             direction.put('e', 7);
             direction.put('c', 8);
             setRandomAmountOfMoney();
+        }
+
+        @Override
+        public String getRoomName () {
+            return ROOMNAME;
+        }
+
+        @Override
+        public String getContents () {
+            return ROOMCONTENTS;
         }
 
         @Override

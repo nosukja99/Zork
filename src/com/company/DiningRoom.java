@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class DiningRoom extends Room{
+
+    //constant
+    public static final String ROOMNAME = "Dinning Room";
+    public static final String ROOMCONTENTS = "dust and an empty box";
+
     HashMap<Character, Integer> direction = new HashMap<>();
     ArrayList<String> contents = new ArrayList<>();
     int roomNum;
@@ -19,6 +24,16 @@ public class DiningRoom extends Room{
         contents.add("an empty box");
         direction.put('s', 3);
         setRandomAmountOfMoney();
+    }
+
+    @Override
+    public String getRoomName () {
+        return ROOMNAME;
+    }
+
+    @Override
+    public String getContents () {
+        return ROOMCONTENTS;
     }
 
     @Override

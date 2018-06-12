@@ -18,4 +18,6 @@ abstract class Room {
     public abstract double getAmountOfMoney ();
     public abstract void setMoney (double money);
     public abstract void takeMoney (User user);
+    public abstract String getRoomName ();
+    public abstract String getContents ();
 }
