@@ -23,6 +23,10 @@ public class Main {
         int random = rnd.nextInt(8);
         int keyValue = 0;
         keyValue = robUser(user, random, keyValue);
+        Random rand = new Random();
+        int randValue = rand.nextInt(8);
+        int testValue = 0;
+        testValue = locateLamp (user, random, testValue);
         System.out.println(foyer.displayExitMessage());
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next();
@@ -39,6 +43,7 @@ public class Main {
                     newRoom.takeMoney(user);
                 }
                 keyValue = robUser(user, random, keyValue);
+                testValue = locateLamp(user, randValue, testValue);
                 System.out.println(newRoom.displayExitMessage());
                 choice1 = scanner.next();
                 while (newRoom.changeStringToChar(choice1) != 'q') {
@@ -55,6 +60,7 @@ public class Main {
                         newRoom.takeMoney(user);
                     }
                     keyValue = robUser(user, random, keyValue);
+                    testValue = locateLamp(user, randValue, testValue);
                     System.out.println(newRoom.displayExitMessage());
                     choice1 = scanner.next();
 
@@ -69,6 +75,17 @@ public class Main {
             }
             System.out.println(user.exit(roomsVisited));
         }
+    }
+
+    private static int locateLamp(User user, int randValue, int testValue) {
+        if (randValue==testValue){
+            user.setHasLamp(true);
+            testValue++;
+        }
+        else {
+            testValue++;
+        }
+        return testValue;
     }
 
     public static int robUser(User user, int random, int keyValue) {
