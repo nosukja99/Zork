@@ -55,7 +55,8 @@ public class DiningRoom extends Room{
         if (user.hasLamp()) {
             display = "You are standing in the dinning room\nYou see "+contents.get(x) +
                 "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                String.format("$%.2f",getAmountOfMoney());
+                String.format("$%.2f",getAmountOfMoney()) + "\nAs you look closer you realize there is an Amazon" +
+                " gift card inside the box. Type in ***Get Gift Card*** to pick up the gift card";
         }
         else {
             display = "You are standing in the dinning room\nYou see "+contents.get(x) +

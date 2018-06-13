@@ -51,7 +51,9 @@ public class SecretRoom extends Room {
         if (user.hasLamp()) {
             display = "You are standing in the secret room.\nYou see "+ contents.get (0) +
                       "\nYou have " +String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                      String.format("$%.2f",getAmountOfMoney());
+                      String.format("$%.2f",getAmountOfMoney()) + "\nYou find a map of the entire house in the corner of" +
+                      " the room. Type in ***Take Map*** to take map ***Take Gold*** to take the gold or ***Take Both***" +
+                      "to take both";
         }
         else {
             display = "You are standing in the secret room.\nYou see "+ contents.get (0) +

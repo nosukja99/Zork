@@ -50,7 +50,8 @@ public class Foyer extends Room {
         if (user.hasLamp()) {
             display = "You are standing in the foyer of an old house.\nYou see " + contents.get(0) +
                     "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                    String.format("$%.2f", getAmountOfMoney());
+                    String.format("$%.2f", getAmountOfMoney()) + "\nYou see a spider web on the wall. The web is made " +
+                    "of pure silk and contains gold coins. Type in ***Take*** to take the golden coins.";
         }
         else {
             display = "You are standing in the foyer of an old house.\nYou see " + contents.get(0) +

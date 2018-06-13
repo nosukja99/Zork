@@ -52,7 +52,9 @@ public class Parlor extends Room{
         if (user.hasLamp()) {
                 display = "You are standing in the parlor.\nYou see " + contents.get(0) +
                     "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                    String.format("$%.2f", getAmountOfMoney());
+                    String.format("$%.2f", getAmountOfMoney()) + "\nOn the wall of the parlor, you see a portrait of your" +
+                    " favorite movie star and the tickets to their latest motion picture. Type ***Take*** to pick up the" +
+                    "tickets and the portrait";
         }
         else {
             display = "You are standing in the parlor.\nYou see " + contents.get(0) +

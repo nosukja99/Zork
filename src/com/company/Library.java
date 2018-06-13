@@ -54,7 +54,8 @@ public class Library extends Room {
         if (user.hasLamp()) {
                 display = "You are standing in a library.\nYou see " + contents.get(0) +
                     "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                    String.format("$%.2f", getAmountOfMoney());
+                        String.format("$%.2f", getAmountOfMoney()) + "\nThere is a scroll on the wall with a secret message: +" +
+                        "******Reading is Awesome******** \nType in this message to receive extra $1000.00";
         }
         else {
                 display = "You are standing in a library.\nYou see " + contents.get(0) +

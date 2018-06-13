@@ -52,7 +52,8 @@ public class FrontRoom extends Room {
         if (user.hasLamp()){
             display = "You are standing in a front room.\nYou see " + contents.get(0) +
                     "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                    String.format("$%.2f", getAmountOfMoney());
+                    String.format("$%.2f", getAmountOfMoney()) + "\nThere is a piano that has sheet music for your" +
+                    "favorite song. You can type in ***play*** to play the song";
         }
         else {
             display = "You are standing in a front room.\nYou see " + contents.get(0) +

@@ -54,7 +54,8 @@ public class Kitchen extends Room {
         if (user.hasLamp()) {
             display = "You are standing in the kitchen.\nYou see " + contents.get(0) +
                     "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                    String.format("$%.2f", getAmountOfMoney());
+                    String.format("$%.2f", getAmountOfMoney()) + "\n There is a refrigerator full of your favorite food" +
+                    "and drinks. You may type in ***eat cake*** to eat cake or ***drink juice**** to eat or drink items";
         }
         else {
             display = "You are standing in the kitchen.\nYou see " + contents.get(0) +
