@@ -46,15 +46,23 @@ public class Foyer extends Room {
 
     @Override
     public String displayContent(User user) {
-        String display = "You are standing in the foyer of an old house.\nYou see "+contents.get(0) +
-                "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
-                String.format("$%.2f",getAmountOfMoney());
+        String display;
+        if (user.hasLamp()) {
+            display = "You are standing in the foyer of an old house.\nYou see " + contents.get(0) +
+                    "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                    String.format("$%.2f", getAmountOfMoney());
+        }
+        else {
+            display = "You are standing in the foyer of an old house.\nYou see " + contents.get(0) +
+                    "\nYou have " + String.format("$%.2f", user.getPersonalMoney()) + "\nAmount of money in the room: " +
+                    String.format("$%.2f", getAmountOfMoney());
+        }
         return display;
 
     }
     @Override
     public String displayExitMessage() {
-        String exitMessage = "{You can (1)exit to the north or press Q to quit}";
+        String exitMessage = "{You can (1 or n)exit to the north or press Q to quit}";
         return exitMessage;
     }
 
@@ -63,8 +71,10 @@ public class Foyer extends Room {
         char direction = '0';
         switch(s)
         {
-            case "1": direction='n'; break;
-            case "q": direction='q'; break;
+            case "1":
+            case "N":
+            case "n": direction='n'; break;
+            case "q":
             case "Q": direction='q'; break;
         }
         return direction;

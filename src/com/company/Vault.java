@@ -49,15 +49,24 @@ import java.util.Random;
 
         @Override
         public String displayContent(User user) {
-            return "You are standing in the Vault.\n"+"You see "+ contents.get(0) +
-                    "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
-                    String.format("$%.2f",getAmountOfMoney());
+            String display;
+            if (user.hasLamp()){
+                display = "You are standing in the Vault.\n"+"You see "+ contents.get(0) +
+                          "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
+                          String.format("$%.2f",getAmountOfMoney());
+            }
+            else {
+                display = "You are standing in the Vault.\n"+"You see "+ contents.get(0) +
+                        "\nYou have " + String.format("$%.2f", user.getPersonalMoney())+ "\nAmount of money in the room: " +
+                        String.format("$%.2f",getAmountOfMoney());
+            }
+            return display;
         }
 
         @Override
         public String displayExitMessage() {
-            String exitMessage = "{You can (1)exit to the east or press Q to quit}";
-            if (Math.random()<CHANCE_OF_FINDING_SECRET_ROOM) exitMessage = "{You can (1)exit to the east, (2) exit to the east (secret room) or press Q to quit}";
+            String exitMessage = "{You can (1 or e)exit to the east or press Q to quit}";
+            if (Math.random()<CHANCE_OF_FINDING_SECRET_ROOM) exitMessage = "{You can (1 or e)exit to the east, (2 or sr) exit to the east (secret room) or press Q to quit}";
             return exitMessage;
         }
 
@@ -66,10 +75,16 @@ import java.util.Random;
             char direction = '0';
             switch(s)
             {
-                case "1": direction='e'; break;
-                case "2": direction='c'; break;
-                case "Q": direction='q'; break;
-                case "q": direction='q'; break;
+                case "1":
+                case "E":
+                case "e":  direction='e'; break;
+                case "2":
+                case "SR":
+                case "Sr":
+                case "sR":
+                case "sr": direction='c'; break;
+                case "Q":
+                case "q":  direction='q'; break;
             }
             return direction;
         }

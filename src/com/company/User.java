@@ -9,16 +9,27 @@ class User {
     // constants:
     final double CHANCE_OF_BEING_FOLLOWED_BY_GHOST = 0.25;
     final char [] directions = {'n','s','e','w'};
-    HashMap<Integer, Room> roomLookUp = new HashMap<>();
-    double personalMoney;
 
-    // accessor and mutator for personal money
+    //instance variables
+    HashMap<Integer, Room> roomLookUp = new HashMap<>();
+    private double personalMoney;
+    private boolean hasLamp;
+
+    // accessors and mutators
     public double getPersonalMoney() {
         return personalMoney;
     }
 
+    public boolean hasLamp() {
+        return hasLamp;
+    }
+
     public void setPersonalMoney(double personalMoney) {
         this.personalMoney = personalMoney;
+    }
+
+    public void setHasLamp(boolean hasLamp) {
+        this.hasLamp = hasLamp;
     }
 
     // constructors:
